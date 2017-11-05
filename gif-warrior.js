@@ -5,20 +5,12 @@ client.on("ready", () => {
   console.log("I am ready!");
 });
 
+var name = "gif-warrior";
 client.on("message", (message) => 
 {
-  if (message.content.startsWith("ping")) 
+  if(!message.author.bot && message.toString().startsWith(name))
   {
-    message.channel.send("pong!");
-  }
-});
-
-var substring = "gif-warrior";
-client.on("message", (message) => 
-{
-  if(!message.author.bot && message.toString().startsWith(substring))
-  {
-    message.channel.send("You typed: " + message.content);
+    message.channel.send("You typed: " + message.content.toString().replace(name, ""));
   }
 });
 
