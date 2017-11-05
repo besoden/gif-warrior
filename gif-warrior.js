@@ -16,7 +16,7 @@ client.on("message", (message) =>
 var substring = "gif-warrior";
 client.on("message", (message) => 
 {
-  if(!message.author.bot && message.toString().includes(substring))
+  if(!message.author.bot && message.toString().startsWith(substring))
   {
     message.channel.send("You typed: " + message.content);
   }
